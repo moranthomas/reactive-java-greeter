@@ -12,6 +12,7 @@ import reactor.core.publisher.Mono;
 public class GreetingHandler {
 
 	public Mono<ServerResponse> hello(ServerRequest request) {
+		System.out.println("Got one ");
 		return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
 			.body(BodyInserters.fromValue("<html>200 OK</html>"));
 	}

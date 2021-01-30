@@ -17,4 +17,17 @@ public class GreetingWebClient {
 	public String getResult() {
 		return ">> result = " + result.flatMap(res -> res.bodyToMono(String.class)).block();
 	}
+	
+	WebTestClient
+	  .bindToServer()
+	    .baseUrl("http://localhost:8080")
+	    .build()
+	    .post()
+	    .uri("/resource")
+	  .exchange()
+	    .expectStatus().isCreated()
+	    .expectHeader().valueEquals("Content-Type", "application/json")
+	    .expectBody().isEmpty();
+	
+	
 }

@@ -1,4 +1,4 @@
-package hello;
+package complete.src.test.java.hello;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
